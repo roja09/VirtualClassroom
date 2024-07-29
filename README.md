@@ -4,12 +4,6 @@ Imagine you are developing the backend for an EdTech platform that aims to host 
 Virtual Classroom Manager that handles class scheduling, student attendance, and assignment submissions.
 Initial State
 
-
-Number of Classrooms: 0
-Number of Students: 0
-Number of Assignments: 0
-
-
 User Input
 1. Add Classroom: User types add_classroom followed by the class name to create a new virtual classroom.
 2. Add Student: User types add_student followed by the student ID and the class name to enroll a student in a classroom.
@@ -25,3 +19,19 @@ Classroom Addition: "Classroom [Name] has been created."
 Student Addition: "Student [ID] has been enrolled in [Class Name]."
 Assignment Scheduled: "Assignment for [Class Name] has been scheduled."
 Assignment Submission: "Assignment submitted by Student [ID] in [Class Name]."
+
+
+
+
+Code Organization
+  Classes:
+    Virtual: Entry point and command handler.
+    VirtualClassroomManager: Singleton class managing the application instance.
+    ClassroomService: Interface defining methods for classroom management.
+    ClassroomServiceImpl: Implements ClassroomService to handle classroom operations.
+    Classroom: Represents a classroom, students, and assignments.
+    Assignment: Represents an assignment and tracks submissions.
+    Student: Represents a student.
+    StudentSubmission: Represents a student's assignment submission
+
+The Virtual Classroom Manager utilizes key design patterns to manage virtual classrooms, students, and assignments efficiently. The Singleton pattern ensures a single point of access to the application, while the Factory Method and Observer patterns enhance flexibility and maintainability. The code is organized into modular components, adhering to best practices for readability and scalability.
